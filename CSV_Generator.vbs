@@ -37,11 +37,14 @@ For Each objFile in allFiles
     If matchResult Then
         dataFile = objFile.Name
         strExcelPath = curDir & "\" & dataFile
-    Else
-        WScript.Echo "Excel file does not exist!"
-        WScript.Quit(1)
+        Exit For
     End If
 Next
+
+If Not matchResult Then
+    WScript.Echo "Excel file does not exist!"
+    WScript.Quit(1)
+End If
 
 If argsCount <> 4 Then
     WScript.Echo "Should have 4 arguments!"
