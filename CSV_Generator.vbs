@@ -12,7 +12,7 @@ const xlCSV = 6
 Dim fso : Set fso = CreateObject("Scripting.FileSystemObject")
 Dim objShell : Set objShell = CreateObject("Wscript.Shell")
 Dim objArgs : Set objArgs = WScript.Arguments
-Dim argsCount : Set argsCount = objArgs.Count
+Dim argsCount : argsCount = objArgs.Count
 Dim curDir : curDir = fso.GetAbsolutePathName(".")
 Dim strExcelPath
 Dim startCell
